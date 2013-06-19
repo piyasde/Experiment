@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="taskslist" ng-csp="">
+  <head>
+    <title>Task Tracker & Feed Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+	<style>
+      body {
+        min-width: 310px;
+		min-height: 600px;
+        overflow-x: hidden;
+		font-family: 'Josefin Slab', serif;
+      }
+	  input[type="text"]
+		{
+		width:350px;
+		display:block;
+		margin-bottom:10px;
+		}
+	.button {
+		padding: 5px 10px;
+		background: #2664cf;
+		font-family: Arial, sans-serif;
+		color: #ffffff;
+		text-align: center;
+		display: block;
+		cursor: pointer
+	}
+	.button {
+		border: 1px solid #4cadfc;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px
+	}
+	.button {
+		background: -webkit-gradient(linear, left top, left bottom, from(#0a8ffe), to(#2b5cc6));
+		background: -moz-linear-gradient(top, #0a8ffe, #2b5cc6);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0a8ffe', endColorstr='#2b5cc6')
+	}	
+    </style>
+	<script src="js/jquery-1.10.1.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+	<script src="js/ajax.js"></script>
+  </head>
+  <body>
+  <section id="tabs">
+		<p><center><h1>Task Tracker & Feed Reader</h1><b>Integrated at <a href="http://www.phloxblog.in" target="_blank">PhloxBlog</a></b></center></p>
+          <div class="bs-docs-example" ng-controller="TaskListCtrl" >
+            <ul id="myTab" class="nav nav-tabs">
+              <li class=""><a href="#addtodo" data-toggle="tab"><b>Task Entry</b></a></li>
+              <li><a href="#listtodo" data-toggle="tab"><b>Task List</b></a></li>
+			  <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Feeds<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#home" data-toggle="tab"><b>Tech. News(Reuters)</b></a></li>
+                  <li><a href="#profile" data-toggle="tab"><b>ESPN Cricket</b></a></li>
+				  <li><a href="#market" data-toggle="tab"><b>Market News</b></a></li>
+				  <li><a href="#pba" data-toggle="tab"><b>Our Posts</b></a></li>
+                </ul>
+              </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+             <div id="addtodo" class="tab-pane fade"  ng-include="'views/addtodo.html'"></div>	
+			 <div id="listtodo" class="tab-pane fade active in" ng-include="'views/listtodo.html'"></div>
+			 <div class="tab-pane fade" id="home">
+                <p>
+				Technology News (Reuters) - Loading ....
+				</p>
+             </div>
+			 <div class="tab-pane fade" id="profile">
+                 <p>
+				ESPN Cricket - Loading ....
+				</p>
+             </div>
+			 <div class="tab-pane fade" id="market">
+                 <p>
+				Market news - Loading ....
+				</p>
+             </div>
+			 <div class="tab-pane fade" id="pba">
+               <p>
+				Technical Articles from Phloxblog - Loading ....
+   			   </p>
+
+             </div>
+            </div>
+          </div>
+        </section>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="controllers/app.js"></script>
+	<script src="controllers/controllers.js"></script>
+  </body>
+</html>

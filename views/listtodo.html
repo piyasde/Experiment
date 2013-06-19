@@ -1,0 +1,9 @@
+<form ng-submit="clear()">
+	<div style="float:right;"><center><button type="submit" >Clear Tasks</button></center></div>
+	<ul style="list-style-type:none">
+		<li ng-repeat="todo in todos" >
+			<p>{{todo.task}}</p>
+		</li>
+	</ul>
+	
+</form>	
